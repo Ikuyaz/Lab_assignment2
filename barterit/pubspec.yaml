@@ -1,0 +1,26 @@
+name: barterit
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  shared_preferences: ^2.1.1
+  http: ^0.13.6
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets: 
+    - assets/images/barter1.jpg
+    - assets/images/barter2.jpg
+    - assets/images/barter3.png
+    - assets/eula/eula.txt
