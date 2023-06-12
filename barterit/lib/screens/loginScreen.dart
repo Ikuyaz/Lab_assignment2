@@ -1,12 +1,15 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:barterit/myconfig.dart';
+import 'package:barterit/screens/homeScreen.dart';
+import 'package:barterit/screens/mainScreen.dart';
 import 'package:barterit/screens/registrationScreen.dart';
+import 'package:barterit/screens/tradeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:barterit/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'mainPage.dart';
+import 'profileScreen.dart';
 
 class loginScreen extends StatefulWidget {
   const loginScreen({super.key});
@@ -24,7 +27,7 @@ class _loginScreenState extends State<loginScreen> {
   bool _isChecked = false;
 
   @override
-  void initStat() {
+  void initState() {
     super.initState();
     loadPref();
   }
@@ -205,7 +208,7 @@ class _loginScreenState extends State<loginScreen> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (content) => mainPage(
+                    builder: (content) => MainScreen(
                           user: user,
                         )));
           } else {
@@ -213,15 +216,11 @@ class _loginScreenState extends State<loginScreen> {
                 .showSnackBar(const SnackBar(content: Text("Login Failed")));
           }
         }
-      }).timeout(const Duration(seconds: 5), onTimeout: () {
-        // Time has run out, do what you wanted to do.
-      });
+      }).timeout(const Duration(seconds: 5), onTimeout: () {});
     } on TimeoutException catch (_) {
       print("Time out");
     }
   }
-
-  void _forgotDialog() {}
 
   void _goToRegister() {
     Navigator.push(context,
