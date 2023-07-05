@@ -1,7 +1,7 @@
 import 'package:barterit/screens/addScreen.dart';
-import 'package:barterit/screens/homeScreen.dart';
 import 'package:barterit/screens/profileScreen.dart';
 import 'package:barterit/screens/tradeScreen.dart';
+import 'package:barterit/screens/tradetabScreen.dart';
 import 'package:flutter/material.dart';
 import '../../models/user.dart';
 
@@ -25,7 +25,7 @@ class _MainScreenState extends State<MainScreen> {
     print(widget.user.name);
     print("MainScreen");
     tabChildren = [
-      homeScreen(user: widget.user),
+      tradeTabScreen(user: widget.user),
       tradeScreen(user: widget.user),
       addScreen(user: widget.user),
       profilePage(user: widget.user),

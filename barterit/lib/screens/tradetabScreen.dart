@@ -10,16 +10,16 @@ import 'package:http/http.dart' as http;
 
 import '../myconfig.dart';
 
-class tradeScreen extends StatefulWidget {
+class tradeTabScreen extends StatefulWidget {
   final User user;
 
-  const tradeScreen({Key? key, required this.user}) : super(key: key);
+  const tradeTabScreen({Key? key, required this.user}) : super(key: key);
 
   @override
-  State<tradeScreen> createState() => _tradeScreenState();
+  State<tradeTabScreen> createState() => _tradeTabScreenState();
 }
 
-class _tradeScreenState extends State<tradeScreen> {
+class _tradeTabScreenState extends State<tradeTabScreen> {
   String maintitle = "Trade";
   List<Item> itemlist = <Item>[];
   late double screenHeight, screenWidth;
@@ -193,7 +193,7 @@ class _tradeScreenState extends State<tradeScreen> {
     await http.post(
       Uri.parse("${MyConfig().SERVER}/barterit/php/load_item.php"),
       body: {
-        "userid": widget.user.id,
+        //"userid": widget.user.id,
         "pageNo": pg.toString(),
         "search": searchController.text,
       },

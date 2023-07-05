@@ -7,6 +7,7 @@ environment:
   sdk: '>=2.19.6 <3.0.0'
 
 dependencies:
+  intl: ^0.18.1
   path_provider: ^2.0.15
   multi_image_picker: ^4.8.1
   carousel_slider: ^4.0.0

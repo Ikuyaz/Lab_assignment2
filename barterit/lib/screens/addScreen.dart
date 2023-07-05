@@ -177,6 +177,25 @@ class _addScreenState extends State<addScreen> {
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(width: 2.0),
                             ))),
+                    TextFormField(
+                        textInputAction: TextInputAction.next,
+                        validator: (val) => val!.isEmpty
+                            ? "Item Interest must be longer than 3"
+                            : null,
+                        onFieldSubmitted: (v) {},
+                        maxLines: 4,
+                        controller: _interestEditingController,
+                        keyboardType: TextInputType.text,
+                        decoration: const InputDecoration(
+                            labelText: 'Item Interest',
+                            alignLabelWithHint: true,
+                            labelStyle: TextStyle(),
+                            icon: Icon(
+                              Icons.insert_emoticon,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(width: 2.0),
+                            ))),
                     Row(children: [
                       Flexible(
                         flex: 5,
